@@ -25,31 +25,43 @@
     />
     <title>Make the days count</title>
   </head>
+
   <body>
-    <main class="container-fluid flex-column justify-content-center col-lg-8">
+	<header>
+		<h1 class="card text-center">Make The Days Count</h1>
       <!-- WEATHER SECTION -->
-      <section id="weather" class="row"></section>
-
+      <section class="row">
+			<div id="weather"></div>
+		</section>
+	</header>
+	<main class="container-fluid flex-column justify-content-center col-lg-8">
       <!-- INSPIRATIONAL SECTION WITH GIPHY -->
-      <section id="giphy" class="row flex-column justify-content-center py-5">
-        <div class="card flex-column justify-content-center">
-          <img class="card-img-top" src=" " alt="Card image cap" />
-
-          <div class="card-body flex">
-            <button class="btn btn-primary">I'm inspired</button>
-            <button class="btn btn-primary">I need more</button>
+      <section class="row flex-column justify-content-center py-5">
+        <div class="card flex-column justify-content-center mx-auto pt-5 pb-4" >
+			<div class="card-body" id="giphy"></div>
+          <div class="flex-row justify-content-between mx-auto">
+            <button class="btn btn-primary mx-5">I'm inspired</button>
+            <button class="btn btn-primary mx-5">I need more</button>
           </div>
         </div>
       </section>
 
+		<section class="row flex-column justify-content-center py-5 hide">
+			<div class="card flex-column justify-content-center mx-auto pt-5 pb-4">
+			 <div class="card-body" id="quote"></div>
+			  <div class="flex-row justify-content-between mx-auto">
+				 <button class="btn btn-primary mx-5">I'm inspired</button>
+				 <button class="btn btn-primary mx-5">I need more</button>
+			  </div>
+			</div>
+		 </section>
+
       <!-- SECTION WITH TODOS -->
-      <section id="todos" class="row flex-column justify-content-center py-5">
+      <section class="row flex-column justify-content-center py-5">
         <div class="card">
           <h5 class="card-header text-center">What are we gonna do today?</h5>
-          <div
-            class="card-body flex-column justify-content-center col-10 mx-auto"
+          <div class="card-body flex-column justify-content-center col-10 mx-auto" id="todos"
           >
-            <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">Add your todos blalalalallalalalaaaaaaa</p>
             <div class="input-group mb-3">
               <input
@@ -210,13 +222,13 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Recipient's username"
-                aria-label="Recipient's username"
+                placeholder="Add more todos"
+                aria-label="Add more todos"
                 aria-describedby="basic-addon2"
               />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">
-                  Button
+                  Add
                 </button>
               </div>
             </div>
@@ -224,6 +236,10 @@
         </div>
       </section>
     </main>
+
+	 <footer>
+		<small class="card text-center">Made with ❤️ by Math.random team</small>
+	 </footer>
 
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
