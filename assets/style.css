@@ -13,10 +13,21 @@
   :root {
 	--Julee: 'Julee', cursive;
 	--Mochiy: "Mochiy Pop One", sans-serif;
+  --white: white;
   }
 
-  body {
+
+/*BODY*/  
+  body{
+    background-color: var(white);
+  }
+
+  #content-wrapper {
+  width: 60%;
+  margin: auto; /* centers >>will evenly distribute the remaining 40% of the width between right side of element and left side */
 	background-image: url(./images/Body-background.jpg);
+  -webkit-box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37); 
+box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37);
   }
   
  /*HEADER*/
@@ -30,12 +41,16 @@ header {
 	height: 20%;
 }
 
+
+
 /*WEATHER CONTAINER*/
 
 
 /*GIPHY CONTAINER*/
 
-/*QUOTE CONTAINER*/
+#giphyContainer img {
+  border-radius: 10px 100px / 120px;
+}
 
 /*TODOS CONTAINER*/
 
@@ -44,3 +59,7 @@ header {
 
 
 
+
+#giphy, #giphy-buttons, .wrapper, .giphyContainer {
+  background: transparent;
+}

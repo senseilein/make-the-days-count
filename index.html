@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="A fantastic webpage to make your days count, made using APIs, Bootstrap and jQuery"
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Julee&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+      <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Julee&family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -29,220 +35,221 @@
   </head>
 
   <body>
-	<header>
-		<h1 class="text-center">Make The Days Count</h1>
-      <!-- WEATHER SECTION -->
-      <section class="row">
-			<div id="weather"></div>
-		</section>
-	</header>
-	<main class="container-fluid flex-column justify-content-center col-lg-8">
-      <!-- INSPIRATIONAL SECTION WITH GIPHY -->
-      <section class="row flex-column justify-content-center py-5">
-        <div class="card flex-column justify-content-center mx-auto pt-5 pb-4" >
-			<div class="card-body" id="giphy"></div>
-          <div class="flex-row justify-content-between mx-auto">
-            <button class="btn btn-primary mx-5">I'm inspired</button>
-            <button class="btn btn-primary mx-5">I need more</button>
-          </div>
-        </div>
-      </section>
-
-		<section class="row flex-column justify-content-center py-5 hide">
-			<div class="card flex-column justify-content-center mx-auto pt-5 pb-4">
-			 <div class="card-body" id="quote"></div>
-			  <div class="flex-row justify-content-between mx-auto">
-				 <button class="btn btn-primary mx-5">I'm inspired</button>
-				 <button class="btn btn-primary mx-5">I need more</button>
-			  </div>
-			</div>
-		 </section>
-
-      <!-- SECTION WITH TODOS -->
-      <section class="row flex-column justify-content-center py-5">
-        <div class="card">
-          <h5 class="card-header text-center">What are we gonna do today?</h5>
-          <div class="card-body flex-column justify-content-center col-10 mx-auto" id="todos"
+    <div id="content-wrapper">
+      <header>
+        <h1 class="text-center">Make The Days Count</h1>
+        <!-- WEATHER SECTION -->
+        <section class="row">
+          <div id="weather"></div>
+        </section>
+      </header>
+      <main class="container-fluid flex-column justify-content-center col-lg-8">
+        <!-- INSPIRATIONAL SECTION WITH GIPHY -->
+        <section
+          class="row flex-column justify-content-center py-5"
+          id="giphyContainer"
+        >
+          <div
+            class="wrapper card flex-column justify-content-center mx-auto pt-5 pb-4"
           >
-            <p class="card-text">Add your todos blalalalallalalalaaaaaaa</p>
-            <div class="input-group mb-3">
-              <input
-                value="Drink water"
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
+            <div class="card-body" id="giphy"></div>
+            <div
+              class="flex-row justify-content-between mx-auto"
+              id="giphy-buttons"
+            >
+              <button class="btn btn-primary mx-5">I'm inspired</button>
+              <button class="btn btn-primary mx-5">I need more</button>
             </div>
-            <div class="input-group mb-3">
-              <input
-                value="Smile"
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                value="Hug a tree"
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                value="Take a walk"
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with checkbox"
-              />
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input
-                    type="checkbox"
-                    aria-label="Checkbox for following text input"
-                  />
-                </div>
-              </div>
-            </div>
+          </div>
+        </section>
 
-            <div class="input-group mb-3 col-5 mx-auto">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Add more todos"
-                aria-label="Add more todos"
-                aria-describedby="basic-addon2"
-              />
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
-                  Add
-                </button>
+        <!-- SECTION WITH TODOS -->
+        <section class="row flex-column justify-content-center py-5">
+          <div class="card">
+            <h5 class="card-header text-center">What are we gonna do today?</h5>
+            <div
+              class="card-body flex-column justify-content-center col-10 mx-auto"
+              id="todos"
+            >
+              <p class="card-text">Add your todos blalalalallalalalaaaaaaa</p>
+              <div class="input-group mb-3">
+                <input
+                  value="Drink water"
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  value="Smile"
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  value="Hug a tree"
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  value="Take a walk"
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with checkbox"
+                />
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input
+                      type="checkbox"
+                      aria-label="Checkbox for following text input"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group mb-3 col-5 mx-auto">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Add more todos"
+                  aria-label="Add more todos"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">
+                    Add
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
 
-	 <footer>
-		<small class="card text-center">Made with ❤️ by Math.random team</small>
-	 </footer>
-
+      <footer>
+        <small class="card text-center">Made with ❤️ by Math.random team</small>
+      </footer>
+    </div>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
