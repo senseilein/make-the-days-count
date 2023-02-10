@@ -9,8 +9,26 @@
     height: 100%;
     font-size: 62.5%;
   }
-  
- 
-  /*font-family: 'Julee', cursive;
-font-family: 'Mochiy Pop One', sans-serif;*/
+
+  :root {
+	--Julee: 'Julee', cursive;
+	--Mochiy: "Mochiy Pop One", sans-serif;
+  }
+
+ /*HEADER*/
+
+
+/*WEATHER CONTAINER*/
+
+
+/*GIPHY CONTAINER*/
+
+/*QUOTE CONTAINER*/
+
+/*TODOS CONTAINER*/
+
+/*FOOTER*/
+
+
+
 
