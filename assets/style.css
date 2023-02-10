@@ -20,7 +20,15 @@
   }
   
  /*HEADER*/
+header h1 {
+	font-family: var(--Mochiy);
+	font-size: 5rem;
+	text-shadow: 3px 0px 0px rgba(214, 231, 232, 0.44);
+}
 
+header {
+	height: 20%;
+}
 
 /*WEATHER CONTAINER*/
 
