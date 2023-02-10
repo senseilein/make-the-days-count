@@ -9,8 +9,38 @@
     height: 100%;
     font-size: 62.5%;
   }
+
+  :root {
+	--Julee: 'Julee', cursive;
+	--Mochiy: "Mochiy Pop One", sans-serif;
+  }
+
+  body {
+	background-image: url(./images/Body-background.jpg);
+  }
   
- 
-  /*font-family: 'Julee', cursive;
-font-family: 'Mochiy Pop One', sans-serif;*/
+ /*HEADER*/
+header h1 {
+	font-family: var(--Mochiy);
+	font-size: 5rem;
+	text-shadow: 3px 0px 0px rgba(214, 231, 232, 0.44);
+}
+
+header {
+	height: 20%;
+}
+
+/*WEATHER CONTAINER*/
+
+
+/*GIPHY CONTAINER*/
+
+/*QUOTE CONTAINER*/
+
+/*TODOS CONTAINER*/
+
+/*FOOTER*/
+
+
+
 
