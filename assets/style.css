@@ -30,12 +30,13 @@ header {
 	height: 20%;
 }
 
+
+
 /*WEATHER CONTAINER*/
 
 
 /*GIPHY CONTAINER*/
 
-/*QUOTE CONTAINER*/
 
 /*TODOS CONTAINER*/
 
@@ -44,3 +45,7 @@ header {
 
 
 
+
+#giphy, #giphy-buttons, .wrapper, .giphyContainer {
+  background: transparent;
+}
