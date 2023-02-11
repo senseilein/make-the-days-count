@@ -53,8 +53,42 @@ header {
 /*GIPHY CONTAINER*/
 
 #giphyContainer img {
-  border-radius: 10px 100px / 120px;
+  /*border-radius: 10px 100px / 120px;*/
+  border-radius: 5%;
 }
+
+#giphy-buttons .btn {
+	border-radius: 4rem;
+	padding: 1.3rem;
+	width: 15rem;
+	font-size: 1.5rem;
+	background-color: #8d06d1;
+	border: #8d06d1;
+	font-family: var(--Mochiy);
+}
+
+#giphy-buttons .btn:hover {
+	font-family: var(--Julee);
+		font-weight: 0;
+		font-size: 20px;
+		color: #fff;
+		background-color: #feee5a;
+		padding: 10px 30px;
+		border: none;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+		border-radius: 50px;
+		transition : 1000ms;
+		transform: translateY(0);
+		}
+		#giphy-buttons .btn:hover{
+		transition : 800ms;
+		padding: 10px 50px;
+		transform : translateY(-2rem);
+		background-color: #feee5a;
+		color: #000000;
+		border: none;
+		}
+
 
 /*TODOS CONTAINER*/
 .card {
