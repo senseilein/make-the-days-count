@@ -52,6 +52,11 @@ header {
 
 /*GIPHY CONTAINER*/
 
+#giphy{
+	width: 100%;
+	margin: auto;
+}
+
 #giphyContainer img {
   /*border-radius: 10px 100px / 120px;*/
   border-radius: 5%;
