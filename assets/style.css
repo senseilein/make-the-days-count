@@ -23,11 +23,15 @@
   }
 
   #content-wrapper {
-  width: 60%;
-  margin: auto; /* centers >>will evenly distribute the remaining 40% of the width between right side of element and left side */
+  /* width: 60%;
+  margin: auto; centers >>will evenly distribute the remaining 40% of the width between right side of element and left side */
 	background-image: url(./images/Body-background.jpg);
+  /* background-color: aqua; */
+  background-size: cover;
+  background-repeat: no-repeat;
   -webkit-box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37); 
 box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37);
+  
   }
   
  /*HEADER*/
@@ -53,9 +57,24 @@ header {
 }
 
 /*TODOS CONTAINER*/
+.card {
+  background-color: transparent;
+  font-family: var(--Mochiy);
+}
+
+.card h2 {
+  font-family: var(--Mochiy);
+}
+
+.card-text {
+  font-size: 1.5rem;
+}
 
 /*FOOTER*/
-
+footer {
+  font-family: var(--Mochiy);
+  font-size: 1.5rem;
+}
 
 
 
