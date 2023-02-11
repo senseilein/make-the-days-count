@@ -60,6 +60,9 @@ header {
 #giphyContainer img {
   /*border-radius: 10px 100px / 120px;*/
   border-radius: 5%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 #giphy-buttons .btn {
