@@ -33,6 +33,11 @@
   background-repeat: no-repeat;
   -webkit-box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37); 
 box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37);
+
+/*the following properties are needed to keep the footer at the bottom of the page*/
+position: relative;
+min-height: 100vh;
+padding-bottom: 10vh;
   
   }
   
@@ -124,7 +129,11 @@ footer {
   font-family: var(--Mochiy);
   font-size: 1.5rem;
   margin: 2rem;
-  height: 10vh;
+  height: 10vh; /*give #content-wrapper padding-bottom of same size*/
+  position: absolute; /*parent container's position needs to be relative*/
+  bottom: 0;
+  width: 100%;
+  margin:auto;
 }
 
 footer a{
