@@ -48,7 +48,12 @@ header {
 
 
 /*WEATHER CONTAINER*/
-
+#weather {
+	border-radius: 50%;
+	width: 10rem;
+	height: 10rem;
+	border: #000000 1px solid;
+}
 
 /*GIPHY CONTAINER*/
 
@@ -109,9 +114,6 @@ footer {
   font-family: var(--Mochiy);
   font-size: 1.5rem;
 }
-
-
-
 
 #giphy, #giphy-buttons, .wrapper, .giphyContainer {
   background: transparent;

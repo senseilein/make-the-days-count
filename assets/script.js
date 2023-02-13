@@ -15,7 +15,7 @@ function showGiphy(response) {
     const imageEl = $("<img>");
     imageEl.attr("src", response.data.images.original.url);
     giphy.append(imageEl);
-
+	 
 }
 
 
