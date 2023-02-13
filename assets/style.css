@@ -67,8 +67,12 @@ header {
 	width: 10rem;
 	height: 10rem;
 	border: #000000 1px solid;
+	background-color: white;
 }
 
+#weather p {
+	text-transform: capitalize;
+}
 
 /*------------------------------GIPHY CONTAINER------------------------------*/
 
