@@ -15,9 +15,9 @@ navigator.geolocation.getCurrentPosition((position) => {
 });
 console.log(userLocation);
 
-function createWeatherQueryURL(lat, long) {
-  const weatherURL =
-    "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric";
+function createWeatherQueryURL(userLocation) {
+  const [lat, lon] = userLocation;
+  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   // console.log(weatherURL);
   return weatherURL;
 }
