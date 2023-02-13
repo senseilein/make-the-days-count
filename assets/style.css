@@ -57,9 +57,19 @@ header {
 
 /*GIPHY CONTAINER*/
 
-#giphyContainer img {
+#giphy {
+	width: 100%;
+	margin: auto;
+}
+
+#giphy img {
   /*border-radius: 10px 100px / 120px;*/
   border-radius: 5%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  -webkit-box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6); 
+box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 }
 
 #giphy-buttons .btn {
