@@ -3,7 +3,39 @@ const inspireBtn = $("#inspireBtn");
 
 /*------------------------------LOCAL STORAGE-----------------------------*/
 
+
+
+
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
+
+/*---FUNCTIONS FOR GEOLOCATION-----*/
+function getUserCoordinates(position) {
+  const userLongitude = position.coords.longitude;
+  const userLatitude = position.coords.latitude;
+  const userLocation = [userLongitude, userLatitude];
+  console.log(position.coords.longitude);
+  getCurrentWeather()
+
+} 
+
+function errorCallback(error) {
+  alert(error);
+}
+
+navigator.geolocation.getCurrentPosition(getUserCoordinates, errorCallback);
+
+
+function getCurrentWeather() {
+  
+  // const userLocation =  getUserCoordinates()
+  
+  const weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric"
+  console.log(weatherURL);
+}
+
+
+
+
 
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
