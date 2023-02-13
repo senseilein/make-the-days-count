@@ -38,6 +38,7 @@ function displayBigNeedMoreBtn() {
   giphyContainer.hide();
   todosContainer.append(bigNeedMore);
 }
+
 /*-----NEED MORE BUTTON-----*/
 
 /*------------------------------FUNCTIONS FOR TODO SECTION-----------------------------*/
