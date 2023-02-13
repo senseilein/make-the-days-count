@@ -7,32 +7,37 @@ const inspireBtn = $("#inspireBtn");
 
 /*---FUNCTIONS FOR GEOLOCATION-----*/
 
-// function getCurrentWeather{
-//   getUserCoordinates()
-// }
+let userLocation = [];
 
-function getUserCoordinates(position) {
-  const userLongitude = position.coords.longitude;
-  const userLatitude = position.coords.latitude;
-  const userLocation = [userLongitude, userLatitude];
-  console.log(position.coords.longitude);
-  createWeatherQueryURL();
-}
+navigator.geolocation.getCurrentPosition((position) => {
+  userLocation.push(position.coords.latitude);
+  userLocation.push(position.coords.longitude);
+});
+console.log(userLocation);
 
-function errorCallback(error) {
-  alert(error);
-}
-
-navigator.geolocation.getCurrentPosition(getUserCoordinates, errorCallback);
-
-function createWeatherQueryURL() {
-  // const userLocation =  getUserCoordinates()
-
+function createWeatherQueryURL(lat, long) {
   const weatherURL =
     "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric";
-  console.log(weatherURL);
+  // console.log(weatherURL);
+  return weatherURL;
 }
 
+// function getCurrentWeather() {
+//   const userLocation = getUserCoordinates();
+
+//call CurrentWeather API
+// $.ajax({
+//   url:
+//   method: ""
+// }).then(function(){
+
+// })
+// .catch(function(error) {
+
+// })
+// }
+
+// getCurrentWeather();
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
 /*-----API CALL-----*/
