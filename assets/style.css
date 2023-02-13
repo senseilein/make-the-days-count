@@ -87,7 +87,7 @@ header {
 box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 }
 
-#giphy-buttons .btn {
+.btn {
 	border-radius: 4rem;
 	padding: 1.3rem;
 	width: 15rem;
@@ -97,7 +97,7 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 	font-family: var(--Mochiy);
 }
 
-#giphy-buttons .btn:hover {
+.btn:hover{
 	font-family: var(--Julee);
 		font-weight: 0;
 		font-size: 20px;
@@ -110,14 +110,15 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 		transition : 1000ms;
 		transform: translateY(0);
 		}
-		#giphy-buttons .btn:hover{
-		transition : 800ms;
-		padding: 10px 50px;
-		transform : translateY(-2rem);
-		background-color: #feee5a;
-		color: #000000;
-		border: none;
-		}
+
+.btn:hover{
+	transition : 800ms;
+	padding: 10px 50px;
+	transform : translateY(-2rem);
+	background-color: #feee5a;
+	color: #000000;
+	border: none;
+}
 
 
 /*------------------------------TODOS CONTAINER------------------------------*/
@@ -133,6 +134,13 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 .card-text {
   font-size: 1.5rem;
 }
+
+#bigNeedMore{
+	width: 20rem;
+	margin: auto;
+	padding: 2rem;
+	color: var(--white);
+  }
 
 /*------------------------------FOOTER------------------------------*/
 footer {
