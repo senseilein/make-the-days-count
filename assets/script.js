@@ -8,36 +8,48 @@ const inspireBtn = $("#inspireBtn");
 /*---FUNCTIONS FOR GEOLOCATION-----*/
 
 let userLocation = [];
+let weatherQueryURL = "";
 
-navigator.geolocation.getCurrentPosition((position) => {
+navigator.geolocation.getCurrentPosition(function (position) {
   userLocation.push(position.coords.latitude);
   userLocation.push(position.coords.longitude);
-});
-console.log(userLocation);
+  if (userLocation.length < 2) {
+    alert("No location retrieved");
+  }
+  createWeatherQueryURL(userLocation);
+  console.log(userLocation);
+  console.log(weatherQueryURL);
+  getCurrentWeather(weatherQueryURL);
+}, errorCallback);
+
+function errorCallback() {
+  alert("User location unavailable");
+}
 
 function createWeatherQueryURL(userLocation) {
   const [lat, lon] = userLocation;
-  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  // console.log(weatherURL);
-  return weatherURL;
+  // console.log(userLocation);
+  weatherQueryURL += `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 }
 
-// function getCurrentWeather() {
-//   const userLocation = getUserCoordinates();
+// console.log("NOOWWW " + weatherQueryURL);
 
-//call CurrentWeather API
-// $.ajax({
-//   url:
-//   method: ""
-// }).then(function(){
+function getCurrentWeather() {
+  console.log("please be defined " + weatherQueryURL);
 
-// })
-// .catch(function(error) {
+    console.log(weatherQueryURL);
 
-// })
-// }
+  //call CurrentWeather API
+  $.ajax({
+    url: ,
+    method: ""
+  }).then(function(response)){
 
-// getCurrentWeather();
+  }).catch(function(error) {
+
+  })
+}
+
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
 /*-----API CALL-----*/
