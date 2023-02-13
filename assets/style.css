@@ -1,4 +1,4 @@
-/*GLOBAL STYLES*/
+/*------------------------------GLOBAL STYLES------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -9,15 +9,17 @@
     height: 100%;
     font-size: 62.5%;
   }
+
 /*copy*/
   :root {
 	--Julee: 'Julee', cursive;
 	--Mochiy: "Mochiy Pop One", sans-serif;
-  --white: white;
+  	--white: white;
+	--black: black;
   }
 
 
-/*BODY*/  
+/*------------------------------BODY------------------------------*/  
   body{
     background-color: var(white);
   }
@@ -31,10 +33,18 @@
   background-repeat: no-repeat;
   -webkit-box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37); 
 box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37);
+
+/*the following properties are needed to keep the footer at the bottom of the page*/
+position: relative;
+min-height: 100vh;
+padding-bottom: 10vh;
   
   }
   
- /*HEADER*/
+
+
+
+ /*------------------------------HEADER------------------------------*/
 header h1 {
 	font-family: var(--Mochiy);
 	font-size: 5rem;
@@ -47,7 +57,11 @@ header {
 
 
 
-/*WEATHER CONTAINER*/
+
+/*------------------------------WEATHER CONTAINER------------------------------*/
+
+
+
 #weather {
 	border-radius: 50%;
 	width: 10rem;
@@ -55,7 +69,8 @@ header {
 	border: #000000 1px solid;
 }
 
-/*GIPHY CONTAINER*/
+
+/*------------------------------GIPHY CONTAINER------------------------------*/
 
 #giphy {
 	width: 100%;
@@ -105,7 +120,7 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 		}
 
 
-/*TODOS CONTAINER*/
+/*------------------------------TODOS CONTAINER------------------------------*/
 .card {
   background-color: transparent;
   font-family: var(--Mochiy);
@@ -119,11 +134,24 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
   font-size: 1.5rem;
 }
 
-/*FOOTER*/
+/*------------------------------FOOTER------------------------------*/
 footer {
   font-family: var(--Mochiy);
   font-size: 1.5rem;
+  margin: 2rem;
+  height: 10vh; /*give #content-wrapper padding-bottom of same size*/
+  position: absolute; /*parent container's position needs to be relative*/
+  bottom: 0;
+  width: 100%;
+  margin:auto;
 }
+
+
+footer a{
+	color: var(--black);
+	text-decoration: none;
+	padding: 1rem;
+  }
 
 #giphy, #giphy-buttons, .wrapper, .giphyContainer {
   background: transparent;
