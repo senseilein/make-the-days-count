@@ -37,37 +37,42 @@ function createWeatherQueryURL(userLocation) {
 function getCurrentWeather() {
   console.log("please be defined " + weatherQueryURL);
 
-    console.log(weatherQueryURL);
+  console.log(weatherQueryURL);
 
   //call CurrentWeather API
   $.ajax({
     url: weatherQueryURL,
-    method: "GET"
-  }).then(function(response){
-    displayWeather(response)
-    console.log(response.weather[0].description);
-    console.log(response.main.temp);
-  }).catch(function(error) {
-    console.log(error);
+    method: "GET",
   })
+    .then(function (response) {
+      displayWeather(response);
+      console.log(response.weather[0].description);
+      console.log(response.main.temp);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 function displayWeather(response) {
   const weatherDiv = $("#weather");
-  const tempEl = $("<p>").text(`${response.main.temp} °C`); 
-  const descriptionEl = $("<p>").text(`${response.weather[0].description} today!`);
+  const tempEl = $("<p>").text(`${response.main.temp} °C`);
+  tempEl.addClass("text-center");
+  const descriptionEl = $("<p>").text(
+    `${response.weather[0].description} today!`
+  );
+  descriptionEl.addClass("text-center");
   const weatherIcon = $("<img>");
+  weatherIcon.attr("id", "weather-icon");
   weatherIcon.attr("src", getWeatherIcon(response));
 
   weatherDiv.append(weatherIcon);
   weatherDiv.append(tempEl);
   weatherDiv.append(descriptionEl);
-
-
 }
 
 function getWeatherIcon(response) {
-  const description = response.weather[0].description
+  const description = response.weather[0].description;
   const icons = [
     String.raw`assets\images\bespoken_weather_icons\clear_sky_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\clear_sky_night_by_Sihan_Liu.png`,
@@ -77,36 +82,35 @@ function getWeatherIcon(response) {
     String.raw`assets\images\bespoken_weather_icons\rain_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\scattered_clouds_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\snow_by_Sihan_Liu.png`,
-    String.raw`assets\images\bespoken_weather_icons\thunderstorm_by_Spot.png`
-  ]
+    String.raw`assets\images\bespoken_weather_icons\thunderstorm_by_Spot.png`,
+  ];
 
   switch (description) {
     case "clear sky":
-      return icons[0]
+      return icons[0];
       break;
     case "few clouds":
-      return icons[2]
+      return icons[2];
       break;
     case "scattered clouds" || "broken clouds":
-      return icons[6]
+      return icons[6];
       break;
     case "shower rain" || "rain":
-      return icons[5]
+      return icons[5];
       break;
     case "thunderstorm":
-      return icons[8]
+      return icons[8];
       break;
     case "snow":
-      return icons[7]
+      return icons[7];
       break;
     case "mist":
-      return icons[4]
+      return icons[4];
       break;
-    default: 
-      return "heart"
+    default:
+      return "heart";
       break;
   }
-
 }
 
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
