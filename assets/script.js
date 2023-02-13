@@ -3,20 +3,21 @@ const inspireBtn = $("#inspireBtn");
 
 /*------------------------------LOCAL STORAGE-----------------------------*/
 
-
-
-
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
 
 /*---FUNCTIONS FOR GEOLOCATION-----*/
+
+// function getCurrentWeather{
+//   getUserCoordinates()
+// }
+
 function getUserCoordinates(position) {
   const userLongitude = position.coords.longitude;
   const userLatitude = position.coords.latitude;
   const userLocation = [userLongitude, userLatitude];
   console.log(position.coords.longitude);
-  getCurrentWeather()
-
-} 
+  createWeatherQueryURL();
+}
 
 function errorCallback(error) {
   alert(error);
@@ -24,18 +25,13 @@ function errorCallback(error) {
 
 navigator.geolocation.getCurrentPosition(getUserCoordinates, errorCallback);
 
-
-function getCurrentWeather() {
-  
+function createWeatherQueryURL() {
   // const userLocation =  getUserCoordinates()
-  
-  const weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric"
+
+  const weatherURL =
+    "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric";
   console.log(weatherURL);
 }
-
-
-
-
 
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
