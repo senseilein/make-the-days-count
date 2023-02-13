@@ -1,5 +1,6 @@
 /*------------------------------DOM ELEMENTS------------------------------*/
 const inspireBtn = $("#inspireBtn");
+let finalResponse;
 
 /*------------------------------LOCAL STORAGE-----------------------------*/
 
@@ -8,22 +9,25 @@ const inspireBtn = $("#inspireBtn");
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
 /*-----API CALL-----*/
-const giphyURL =
-  "https://api.giphy.com/v1/gifs/random?api_key=JH2woZDs5AK3mRK0PqE52IEvHoYHhQ84";
+const giphyURL = "https://api.giphy.com/v1/gifs/search?q=inspiration&api_key=iB7XfOBy9GnAHJMbb3bLreShLnvewTmY&limit=50";
 $.ajax({
-  url: giphyURL,
-  method: "GET",
-}).then(function (response) {
-  //console.log(response.data.images.original_mp4.mp4);
-  showGiphy(response);
-});
+    url: giphyURL,
+    method: "GET"
+}).then(
+    function (response) {
+        console.log(response);
+			finalResponse = response.data;
+        showGiphy(finalResponse[0].images.original.url);
+    });
 
-function showGiphy(response) {
-  const giphy = $("#giphy");
-  const imageEl = $("<img>");
-  imageEl.attr("src", response.data.images.original.url);
-  giphy.append(imageEl);
-}
+	 function showGiphy(url) {
+		const giphy = $("#giphy");
+		const imageEl = $("<img>");
+		imageEl.attr("src", url);
+		giphy.empty();
+		giphy.append(imageEl);
+	  
+  };
 
 /*-----INSPIRED BUTTON-----*/
 
@@ -40,6 +44,23 @@ function displayBigNeedMoreBtn() {
 }
 
 /*-----NEED MORE BUTTON-----*/
+const needMoreBtn = $("#needMoreBtn");
+
+function needMoreGiphy() {
+	
+	let giphyArray = [];
+	
+	finalResponse.forEach(function(gif) {
+		giphyArray.push(gif.images.original.url);
+		});
+
+		let randomGif = Math.floor(Math.random() * finalResponse.length);
+
+		showGiphy(giphyArray[randomGif]);
+		console.log(giphyArray, randomGif);
+	} ;
+
+needMoreBtn.on("click", needMoreGiphy);
 
 /*------------------------------FUNCTIONS FOR TODO SECTION-----------------------------*/
 
