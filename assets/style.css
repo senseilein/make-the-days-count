@@ -22,6 +22,7 @@
 /*------------------------------BODY------------------------------*/  
   body{
     background-color: var(white);
+	font-family: var(--Julee);
   }
 
   #content-wrapper {
@@ -38,7 +39,6 @@ box-shadow: 2px 5px 19px 4px rgba(0,0,0,0.37);
 position: relative;
 min-height: 100vh;
 padding-bottom: 10vh;
-  
   }
   
 
@@ -63,13 +63,35 @@ header {
 
 
 #weather {
+	display: flex;
 	border-radius: 50%;
 	width: 10rem;
 	height: 10rem;
-	border: #000000 1px solid;
+	border: 0.1rem solid rgba(255, 255, 255, 0.792);
+	background: rgba(255, 255, 255, 0.792);
+	-webkit-box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6); 
+	box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 }
 
+#weather p {
+	text-transform: capitalize;
+}
 
+#weather-icon{
+	width: 5rem;
+	margin: auto;
+}
+
+#cupOfTeaButton{
+	background: transparent;
+	border: 0px solid transparent;
+	cursor: pointer;
+}
+
+#cupOfTea{
+	width: 4rem;
+	margin: auto;
+}
 /*------------------------------GIPHY CONTAINER------------------------------*/
 
 #giphy {
