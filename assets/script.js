@@ -72,7 +72,8 @@ function displayWeather(response) {
 }
 
 function getWeatherIcon(response) {
-  const description = response.weather[0].description;
+  // const description = response.weather[0].description;
+  const apiIcon = response.weather[0].icon;
   const icons = [
     String.raw`assets\images\bespoken_weather_icons\clear_sky_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\clear_sky_night_by_Sihan_Liu.png`,
@@ -85,32 +86,63 @@ function getWeatherIcon(response) {
     String.raw`assets\images\bespoken_weather_icons\thunderstorm_by_Spot.png`,
   ];
 
-  switch (description) {
-    case "clear sky":
+  switch (apiIcon) {
+    case "01d":
       return icons[0];
       break;
-    case "few clouds":
+    case "01n":
+      return icons[1];
+    case "02d":
       return icons[2];
       break;
-    case "scattered clouds" || "broken clouds":
+    case "02n":
+      return icons[3];
+    case "03d" || "03n" || "04d" || "04n":
       return icons[6];
       break;
-    case "shower rain" || "rain":
+    case "09d" || "09n" || "10d" || "10n":
       return icons[5];
       break;
-    case "thunderstorm":
+    case "11d" || "11n":
       return icons[8];
       break;
-    case "snow":
+    case "13d" || "13n":
       return icons[7];
       break;
-    case "mist":
+    case "50d" || "50n":
       return icons[4];
       break;
     default:
-      return "heart";
+      return "^_^";
       break;
   }
+
+  // switch (description) {
+  //   case "clear sky":
+  //     return icons[0];
+  //     break;
+  //   case "few clouds":
+  //     return icons[2];
+  //     break;
+  //   case "scattered clouds" || "broken clouds":
+  //     return icons[6];
+  //     break;
+  //   case "shower rain" || "rain":
+  //     return icons[5];
+  //     break;
+  //   case "thunderstorm":
+  //     return icons[8];
+  //     break;
+  //   case "snow":
+  //     return icons[7];
+  //     break;
+  //   case "mist":
+  //     return icons[4];
+  //     break;
+  //   default:
+  //     return "heart";
+  //     break;
+  // }
 }
 
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
