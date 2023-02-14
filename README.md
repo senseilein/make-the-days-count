@@ -17,22 +17,17 @@
 - [License](#-license)
 ​
 ## �� DESCRIPTION
-​
-### �� What is it about?
-​
-[comment]: <> (what? why? your motivation for the project? what problem does it solve?)
+The main idea of this Project, called Make The Days Count, is to make sure user is in a good mood and ready to do everything he/she has planned for the day. This project was useful in putting all our knowledges together as a group. The biggest motivation was to establish ourselves and each one of us as full-fledged team member as it was ou first team project. Beside the fact that we used our knowledges in Bootstrap, JavaScript, jQuery we got to learn GitHub from the aspect of working in different branches, merging and resolving conflicts.
 ​
 ## �� USAGE
+If a user opens a page already in a good mood and presses "I'm inspired" button he/she could defenetely create a ToDo list for today. The user will have 4 constant options for each day: drink water, smile, hug a tree, take a walk. Others user can add dynemically. In other way, the user clicks on "I need more" button which allows to watch motivational and inspirational gifs. The user can also check the weather condition to decide if what user wants to do is outside or inside. To be aware of the weather around, the user should approve the location...
 ​
 [**>> Visit my portfolio website <<**](insert the link here)
 ​
 ### �� User story
 ​
-```
-As a...,
-I WANT to ...
-SO THAT I can ...
-```
+As a user 
+I want to start the day with some motivational gifs, get the weather as I open the webpage and prepare my todo list for the day.
 ​
 [comment]: <> (feel free to complete the list)
 ​
