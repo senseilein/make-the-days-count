@@ -24,7 +24,6 @@ navigator.geolocation.getCurrentPosition(function (position) {
 }, doNotShowWeather);
 
 function doNotShowWeather() {
-  alert("User location unavailable");
   const weatherDiv = $("#weather");
   const cupOfTeaButton = $("<button>");
   cupOfTeaButton.attr("id", "cupOfTeaButton");
