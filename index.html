@@ -97,74 +97,94 @@
               <p class="card-text">Add your todos for the day here!</p>
 
               <!-- <div class="card" "row flex-column justify-content-center py-5" style="border-radius: 15px; "> -->
-                <div class="card-body p-5">
-                  <!-- <h6 class="mb-3">Awesome Todo List</h6> -->
-                  <ul class="list-group mb-0" id = "list">
-                    <li
-                      class=" list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                      <div class=" d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
-                        Drink water
-                      </div>
-                      <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                        <i class="fas fa-times text-primary"></i>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                      <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." checked />
-                        <s>Dapibus ac facilisis in</s>
-                      </div>
-                      <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                        <i class="fas fa-times text-primary"></i>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                      <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
-                        Hug a tree
-                      </div>
-                      <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                        <i class="fas fa-times text-primary"></i>
-                      </a>
-                    </li>
-                    <li
-                      class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-                      <div class="d-flex align-items-center">
-                        <input class="form-check-input me-2" type="checkbox" value="" aria-label="..." />
-                        Read work emails
-                      </div>
-                      <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
-                        <i class="fas fa-times text-primary"></i>
-                      </a>
-                    </li>
-                
-                  </ul>
-                </div>
-              </div>
-
-
-
-
-              <div class="input-group mb-3 col-7 mx-auto" id="input-box">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Add more todos"
-                  aria-label="Add more todos"
-                  aria-describedby="basic-addon2"
-                />
-                <div class="input-group-append">
-                  <button
-                    class="btn btn-outline-secondary"
-                    id="add-button"
-                    type="button"
+              <div class="card-body p-5">
+                <!-- <h6 class="mb-3">Awesome Todo List</h6> -->
+                <ul class="list-group mb-0" id="list">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
                   >
-                    Add
-                  </button>
-                </div>
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input me-2"
+                        type="checkbox"
+                        value=""
+                        aria-label="..."
+                      />
+                      Drink water
+                    </div>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
+                      <i class="fas fa-times text-primary"></i>
+                    </a>
+                  </li>
+                  <li
+                    class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
+                  >
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input me-2"
+                        type="checkbox"
+                        value=""
+                        aria-label="..."
+                        checked
+                      />
+                      <s>Dapibus ac facilisis in</s>
+                    </div>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
+                      <i class="fas fa-times text-primary"></i>
+                    </a>
+                  </li>
+                  <li
+                    class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
+                  >
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input me-2"
+                        type="checkbox"
+                        value=""
+                        aria-label="..."
+                      />
+                      Hug a tree
+                    </div>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
+                      <i class="fas fa-times text-primary"></i>
+                    </a>
+                  </li>
+                  <li
+                    class="list-group-item d-flex d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
+                  >
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input me-2"
+                        type="checkbox"
+                        value=""
+                        aria-label="..."
+                      />
+                      Read work emails
+                    </div>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Remove item">
+                      <i class="fas fa-times text-primary"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="input-group mb-3 col-7 mx-auto" id="input-box">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Add more todos"
+                aria-label="Add more todos"
+                aria-describedby="basic-addon2"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  id="add-button"
+                  type="button"
+                >
+                  Add
+                </button>
               </div>
             </div>
           </div>
