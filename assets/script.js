@@ -2,6 +2,9 @@
 const inspireBtn = $("#inspireBtn");
 let finalResponse;
 
+//when page loads, weather div will be hidden / only displayed later when we get weather data
+const weatherDiv = $("#weather");
+weatherDiv.hide();
 /*------------------------------LOCAL STORAGE-----------------------------*/
 
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
@@ -70,6 +73,7 @@ function displayWeather(response) {
   weatherDiv.append(weatherIcon);
   weatherDiv.append(tempEl);
   weatherDiv.append(descriptionEl);
+  weatherDiv.show();
 }
 
 function getWeatherIcon(response) {
@@ -149,25 +153,24 @@ function getWeatherIcon(response) {
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
 /*-----API CALL-----*/
-const giphyURL = "https://api.giphy.com/v1/gifs/search?q=inspiration&api_key=iB7XfOBy9GnAHJMbb3bLreShLnvewTmY&limit=50";
+const giphyURL =
+  "https://api.giphy.com/v1/gifs/search?q=inspiration&api_key=iB7XfOBy9GnAHJMbb3bLreShLnvewTmY&limit=50";
 $.ajax({
-    url: giphyURL,
-    method: "GET"
-}).then(
-    function (response) {
-        console.log(response);
-			finalResponse = response.data;
-        showGiphy(finalResponse[0].images.original.url);
-    });
+  url: giphyURL,
+  method: "GET",
+}).then(function (response) {
+  console.log(response);
+  finalResponse = response.data;
+  showGiphy(finalResponse[0].images.original.url);
+});
 
-	 function showGiphy(url) {
-		const giphy = $("#giphy");
-		const imageEl = $("<img>");
-		imageEl.attr("src", url);
-		giphy.empty();
-		giphy.append(imageEl);
-	  
-  };
+function showGiphy(url) {
+  const giphy = $("#giphy");
+  const imageEl = $("<img>");
+  imageEl.attr("src", url);
+  giphy.empty();
+  giphy.append(imageEl);
+}
 
 /*-----INSPIRED BUTTON-----*/
 
@@ -187,18 +190,17 @@ function displayBigNeedMoreBtn() {
 const needMoreBtn = $("#needMoreBtn");
 
 function needMoreGiphy() {
-	
-	let giphyArray = [];
-	
-	finalResponse.forEach(function(gif) {
-		giphyArray.push(gif.images.original.url);
-		});
+  let giphyArray = [];
 
-		let randomGif = Math.floor(Math.random() * finalResponse.length);
+  finalResponse.forEach(function (gif) {
+    giphyArray.push(gif.images.original.url);
+  });
 
-		showGiphy(giphyArray[randomGif]);
-		console.log(giphyArray, randomGif);
-	} ;
+  let randomGif = Math.floor(Math.random() * finalResponse.length);
+
+  showGiphy(giphyArray[randomGif]);
+  console.log(giphyArray, randomGif);
+}
 
 needMoreBtn.on("click", needMoreGiphy);
 
