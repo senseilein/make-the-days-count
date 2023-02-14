@@ -92,7 +92,7 @@ function getWeatherIcon(response) {
     String.raw`assets\images\bespoken_weather_icons\clear_sky_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\clear_sky_night_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\few_clouds_by_Sihan_Liu.png`,
-    String.raw`assets\images\bespoken_weather_icons\few_clouds_night_by_Sihan_Liu.png`,
+    `assets\\images\\bespoken_weather_icons\\few_clouds_night_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\mist_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\rain_by_Sihan_Liu.png`,
     String.raw`assets\images\bespoken_weather_icons\scattered_clouds_by_Sihan_Liu.png`,
@@ -103,33 +103,39 @@ function getWeatherIcon(response) {
   switch (apiIcon) {
     case "01d":
       return icons[0];
-      break;
+      //break;
     case "01n":
       return icons[1];
     case "02d":
       return icons[2];
-      break;
+      //break;
     case "02n":
       return icons[3];
-    case "03d" || "03n" || "04d" || "04n":
+    case "03d":
+	 case "03n":
+		case "04d":
+		case "04n":
       return icons[6];
-      break;
-    case "09d" || "09n" || "10d" || "10n":
+      //break;
+    case "09d":
+		case "09n":
+		case "10d":
+		case "10n":
       return icons[5];
-      break;
-    case "11d" || "11n":
+      //break;
+    case "11d":
+	case "11n":
       return icons[8];
-      break;
-    case "13d" || "13n":
+      //break;
+    case "13d":
+		case "13n":
       return icons[7];
-      break;
-    case "50d" || "50n":
+      //break;
+    case "50d":
+	 case "50n":
       return icons[4];
-      break;
-    default:
-      return "^_^";
-      break;
-  }
+      //break;
+    }
 
   // switch (description) {
   //   case "clear sky":
@@ -224,11 +230,38 @@ addbutton.on("click", function addLi(event) {
   liEl.addClass(
     "list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
   );
-  textEl = document.createTextNode(newTodoEl);
-  liEl.append(textEl);
+
+  const divInput = $("<div>");
+  divInput.addClass("d-flex align-items-center");
+  divInput.append(newTodoEl);
+  createCheckbox(divInput);
+  createRemoveItemEl(liEl);
+  liEl.prepend(divInput);
   listEl.append(liEl);
 });
+
+function createCheckbox(divInput) {
+  const checkBox = $("<input>").attr({ type: "checkbox" });
+  checkBox.addClass("form-check-input me-2");
+  divInput.prepend(checkBox);
+ 
+}
+function createRemoveItemEl(liEl) {
+  const cross = $("<a>");
+  cross.attr({ href: "#!"});
+  cross.addClass("cross");
+  const iEl = $("<i>");
+  iEl.addClass("fas fa-times text-primary");
+  cross.append(iEl);
+  liEl.append(cross);
+}
+
+// function removeToDoItem() {
+// 	alert("Cross clicked!");
+// }
 
 /*------------------------------EVENT LISTENERS-----------------------------*/
 
 inspireBtn.on("click", displayBigNeedMoreBtn);
+
+//$(".cross").on("click", removeToDoItem);
