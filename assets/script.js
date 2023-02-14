@@ -249,7 +249,7 @@ function createCheckbox(divInput) {
 function createRemoveItemEl(liEl) {
   const cross = $("<a>");
   cross.attr({ href: "#!"});
-  //cross.addClass("cross");
+  cross.addClass("cross");
   const iEl = $("<i>");
   iEl.addClass("fas fa-times text-primary");
   cross.append(iEl);
