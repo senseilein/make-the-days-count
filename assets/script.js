@@ -17,20 +17,18 @@ let weatherQueryURL = "";
 navigator.geolocation.getCurrentPosition(function (position) {
   userLocation.push(position.coords.latitude);
   userLocation.push(position.coords.longitude);
-  if (userLocation.length < 2) {
-    alert("No location retrieved");
-  }
   createWeatherQueryURL(userLocation);
   console.log(userLocation);
   console.log(weatherQueryURL);
   getCurrentWeather(weatherQueryURL);
-}, errorCallback);
+}, doNotShowWeather);
 
-function errorCallback() {
+function doNotShowWeather() {
   alert("User location unavailable");
 }
 
 function createWeatherQueryURL(userLocation) {
+  // we create lat & lon variables using array destructuring
   const [lat, lon] = userLocation;
   // console.log(userLocation);
   weatherQueryURL += `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -50,8 +48,8 @@ function getCurrentWeather() {
   })
     .then(function (response) {
       displayWeather(response);
-      console.log(response.weather[0].description);
-      console.log(response.main.temp);
+      //console.log(response.weather[0].description);
+      //console.log(response.main.temp);
     })
     .catch(function (error) {
       console.log(error);
