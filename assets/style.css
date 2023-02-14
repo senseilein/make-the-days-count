@@ -49,6 +49,7 @@ header h1 {
 	font-family: var(--Mochiy);
 	font-size: 5rem;
 	text-shadow: 3px 0px 0px rgba(214, 231, 232, 0.44);
+	padding-top: 3rem;
 }
 
 header {
@@ -63,6 +64,10 @@ header {
 
 
 #weather {
+	 position:absolute;
+	/* top: 1rem;
+	left: 1rem; */ 
+
 	display: flex;
 	border-radius: 50%;
 	width: 10rem;
