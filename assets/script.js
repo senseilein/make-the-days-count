@@ -25,6 +25,18 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
 function doNotShowWeather() {
   alert("User location unavailable");
+  const weatherDiv = $("#weather");
+  const cupOfTeaButton = $("<button>");
+  cupOfTeaButton.attr("id", "cupOfTeaButton");
+  const cupOfTea = $("<img>");
+  cupOfTea.attr("id", "cupOfTea");
+  cupOfTea.attr(
+    "src",
+    String.raw`assets\images\chocolate_tea_coffee_cup_drink_heart_love_icon_by_Free_Adobe_icon-icons.png`
+  );
+  cupOfTeaButton.append(cupOfTea);
+  weatherDiv.prepend(cupOfTeaButton);
+  weatherDiv.show();
 }
 
 function createWeatherQueryURL(userLocation) {
