@@ -215,6 +215,20 @@ needMoreBtn.on("click", needMoreGiphy);
 
 /*------------------------------FUNCTIONS FOR TODO SECTION-----------------------------*/
 
+let addbutton = $("#add-button");
+addbutton.on("click", function addLi(event) {
+  let newTodoEl = $("input:text").val();
+  console.log(newTodoEl);
+  listEl = $("#list");
+  liEl = $("<li>");
+  liEl.addClass(
+    "list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
+  );
+  textEl = document.createTextNode(newTodoEl);
+  liEl.append(textEl);
+  listEl.append(liEl);
+});
+
 /*------------------------------EVENT LISTENERS-----------------------------*/
 
 inspireBtn.on("click", displayBigNeedMoreBtn);
