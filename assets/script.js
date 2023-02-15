@@ -13,7 +13,9 @@ function initLocalStorage() {
   {
 
     localStorage.setItem('toDoList',JSON.stringify([]))
-
+    let toDoList = JSON.parse(localStorage.getItem('toDoList'))
+    toDoList = [...defaultTodos]
+    localStorage.setItem('toDoList',JSON.stringify(toDoList))
   }
 }
 initLocalStorage()
@@ -287,6 +289,7 @@ function removeToDoItem(event) {
   let itemToBeRemoved =  $(event.target).parent().parent()
   console.log(itemToBeRemoved.children().children().text())
   const itemText = itemToBeRemoved.children().children().text()
+  console.log(itemText)
   let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
   console.log(toDoList)
   const index = toDoList.indexOf(itemText)
