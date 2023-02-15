@@ -256,12 +256,14 @@ addbutton.on("click", function addLi(event) {
 });
 
 function updateLocalStorageWithNewTodos(newTodoEl){
- let toDoList = JSON.parse(localStorage.getItem('toDoList'))
+ let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
   if (!toDoList.includes(newTodoEl)){
 toDoList.push(newTodoEl)
   }
   localStorage.setItem("toDoList",JSON.stringify(toDoList))
 }
+
+
 
 function createCheckbox(divInput) {
   const checkBox = $("<input>").attr({ type: "checkbox" });
@@ -283,8 +285,11 @@ function createRemoveItemEl(liEl) {
 
 function removeToDoItem(event) {
   let itemToBeRemoved =  $(event.target).parent().parent()
-  console.log(event.target)
+  console.log(itemToBeRemoved)
 itemToBeRemoved.remove();
+
+let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
+localStorage.setItem("toDoList",JSON.stringify(toDoList))
 }
 
 function handleCheckboxChange(event) {
