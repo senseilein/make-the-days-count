@@ -147,6 +147,14 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 
 
 /*------------------------------TODOS CONTAINER------------------------------*/
+#todos-card{
+	margin-bottom: 2rem;
+}
+
+#todos .card-body{
+	height: 40vh;
+}
+
 .card {
   background-color: transparent;
   font-family: var(--Mochiy);
@@ -160,13 +168,6 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
   font-size: 1.5rem;
 }
 
-#bigNeedMore{
-	width: 20rem;
-	margin: auto;
-	padding: 2rem;
-	color: var(--white);
-  }
-
   .todo-text {
 	text-decoration: line-through;
   }
@@ -175,6 +176,12 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 	margin: 0;
   }
 
+#bigNeedMore{
+	width: 20rem;
+	margin: auto;
+	padding: 1.3rem;
+	color: var(--white);
+  }
 /*------------------------------FOOTER------------------------------*/
 footer {
   font-family: var(--Mochiy);
