@@ -13,7 +13,9 @@ function initLocalStorage() {
   {
 
     localStorage.setItem('toDoList',JSON.stringify([]))
-
+    let toDoList = JSON.parse(localStorage.getItem('toDoList'))
+    toDoList = [...defaultTodos]
+    localStorage.setItem('toDoList',JSON.stringify(toDoList))
   }
 }
 initLocalStorage()
@@ -285,11 +287,16 @@ function createRemoveItemEl(liEl) {
 
 function removeToDoItem(event) {
   let itemToBeRemoved =  $(event.target).parent().parent()
-  console.log(itemToBeRemoved)
-itemToBeRemoved.remove();
-
-let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
+  console.log(itemToBeRemoved.children().children().text())
+  const itemText = itemToBeRemoved.children().children().text()
+  console.log(itemText)
+  let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
+  console.log(toDoList)
+  const index = toDoList.indexOf(itemText)
+  toDoList.splice(index,1)
+  console.log(index)
 localStorage.setItem("toDoList",JSON.stringify(toDoList))
+itemToBeRemoved.remove();
 }
 
 function handleCheckboxChange(event) {
