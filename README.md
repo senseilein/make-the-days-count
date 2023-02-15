@@ -93,10 +93,11 @@ It's done when:
 
 ​
 ### ➕ Suggestions for improvement
-+ Set the priorities in more efficient way
-+ Time Management
-+ Try to commit more often
-+ And learn, learn, learn
++ Add inspirational quotes as well as gifs.
++ Add a weekly to do list to plan things beyond one day.
++ Day and Night theme.
++ Set intervals for specific alerts (e.g. for to do items).
++ Using navigator.language to translate page based on user’s language.
 
 
 ## 🚀 INSTALLATION
