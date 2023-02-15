@@ -282,7 +282,9 @@ function createRemoveItemEl(liEl) {
 }
 
 function removeToDoItem(event) {
-  $(event.target).parent().parent().remove();
+  let itemToBeRemoved =  $(event.target).parent().parent()
+  console.log(event.target)
+itemToBeRemoved.remove();
 }
 
 function handleCheckboxChange(event) {
