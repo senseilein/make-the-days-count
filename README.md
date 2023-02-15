@@ -28,7 +28,7 @@ The main idea of this Project, called Make The Days Count, is to make sure user 
 
 If a user opens a page already in a good mood and presses "I'm inspired" button he/she could defenetely create a ToDo list for today. 
 
-![alt text]
+![alt text](assets/images/todos-list.png)
 
 The user will have 4 constant options for each day: drink water, smile, hug a tree, take a walk. Others user can add dynemically. In other way, the user clicks on "I need more" button which allows to watch motivational and inspirational gifs. 
 
