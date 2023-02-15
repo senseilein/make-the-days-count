@@ -5,11 +5,16 @@ let finalResponse;
 //when page loads, weather div will be hidden / only displayed later when we get weather data
 const weatherDiv = $("#weather");
 weatherDiv.hide();
+let defaultTodos = ['Drink Water','Smile', 'Hug a tree','Take a walk' ]
 /*------------------------------LOCAL STORAGE-----------------------------*/
 function initLocalStorage() {
-	const toDoList = JSON.parse(localStorage.getItem(toDoList))
+	let toDoList = JSON.parse(localStorage.getItem('toDoList'))
+  if (!toDoList)
+  {
+    localStorage.setItem('toDoList',JSON.stringify([]))
+  }
 }
-
+initLocalStorage()
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
 
 /*---FUNCTIONS FOR GEOLOCATION-----*/
