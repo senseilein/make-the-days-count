@@ -11,10 +11,13 @@ function initLocalStorage() {
 	let toDoList = JSON.parse(localStorage.getItem('toDoList'))
   if (!toDoList)
   {
+
     localStorage.setItem('toDoList',JSON.stringify([]))
+
   }
 }
 initLocalStorage()
+
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
 
 /*---FUNCTIONS FOR GEOLOCATION-----*/
@@ -231,14 +234,15 @@ needMoreBtn.on("click", needMoreGiphy);
 
 let addbutton = $("#add-button");
 addbutton.on("click", function addLi(event) {
-  let newTodoEl = $("input:text").val();
+  let newTodoEl = $("#todo-input").val().trim();
+  updateLocalStorageWithNewTodos(newTodoEl)
   console.log(newTodoEl);
   listEl = $("#list");
   liEl = $("<li>");
   liEl.addClass(
     "list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
   );
-  $("input:text").val("");
+  $("#todo-input").val("");
 
   const divInput = $("<div>");
   divInput.addClass("d-flex align-items-center");
@@ -250,6 +254,14 @@ addbutton.on("click", function addLi(event) {
   liEl.prepend(divInput);
   listEl.append(liEl);
 });
+
+function updateLocalStorageWithNewTodos(newTodoEl){
+ let toDoList = JSON.parse(localStorage.getItem('toDoList'))
+  if (!toDoList.includes(newTodoEl)){
+toDoList.push(newTodoEl)
+  }
+  localStorage.setItem("toDoList",JSON.stringify(toDoList))
+}
 
 function createCheckbox(divInput) {
   const checkBox = $("<input>").attr({ type: "checkbox" });
