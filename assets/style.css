@@ -182,6 +182,16 @@ box-shadow: 0px 0px 14px 5px rgba(255,255,255,0.6);
 	padding: 1.3rem;
 	color: var(--white);
   }
+
+  #todo-input{
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;	
+  }
+
+  #add-button{
+	width: 7rem;
+  }
+  
 /*------------------------------FOOTER------------------------------*/
 footer {
   font-family: var(--Mochiy);
