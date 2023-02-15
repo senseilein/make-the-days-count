@@ -6,6 +6,9 @@ let finalResponse;
 const weatherDiv = $("#weather");
 weatherDiv.hide();
 /*------------------------------LOCAL STORAGE-----------------------------*/
+function initLocalStorage() {
+	const toDoList = JSON.parse(localStorage.getItem(toDoList))
+}
 
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
 
