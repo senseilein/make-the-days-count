@@ -229,11 +229,14 @@ addbutton.on("click", function addLi(event) {
   liEl = $("<li>");
   liEl.addClass(
     "list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
-  );
+  )
+  $("input:text").val("");
 
   const divInput = $("<div>");
   divInput.addClass("d-flex align-items-center");
-  divInput.append(newTodoEl);
+  const pTag = $("<p>");
+  pTag.append(newTodoEl);
+  divInput.append(pTag);
   createCheckbox(divInput);
   createRemoveItemEl(liEl);
   liEl.prepend(divInput);
@@ -244,8 +247,9 @@ function createCheckbox(divInput) {
   const checkBox = $("<input>").attr({ type: "checkbox" });
   checkBox.addClass("form-check-input me-2");
   divInput.prepend(checkBox);
- 
-}
+  checkBox.on("change", handleCheckboxChange);
+};
+
 function createRemoveItemEl(liEl) {
   const cross = $("<a>");
   cross.attr({ href: "#!"});
@@ -254,14 +258,21 @@ function createRemoveItemEl(liEl) {
   iEl.addClass("fas fa-times text-primary");
   cross.append(iEl);
   liEl.append(cross);
-}
+  cross.on("click", removeToDoItem);
+};
 
-// function removeToDoItem() {
-// 	alert("Cross clicked!");
-// }
+function removeToDoItem(event) {
+	$(event.target).parent().parent().remove();
+};
+
+function handleCheckboxChange(event) {
+	$(event.target).parent().find("p").toggleClass("todo-text");
+	}
 
 /*------------------------------EVENT LISTENERS-----------------------------*/
 
 inspireBtn.on("click", displayBigNeedMoreBtn);
 
-//$(".cross").on("click", removeToDoItem);
+$(".cross").on("click", removeToDoItem);
+
+$(".form-check-input").on("change", handleCheckboxChange);
