@@ -12,14 +12,11 @@ function initLocalStorage() {
   let toDoList = JSON.parse(localStorage.getItem("toDoList"));
   if (!toDoList) {
     localStorage.setItem("toDoList", JSON.stringify([]));
-    // let toDoList = JSON.parse(localStorage.getItem("toDoList"));
-    // /toDoList = [...defaultTodos];
-    // localStorage.setItem("toDoList", JSON.stringify(toDoList));
   }
 }
 initLocalStorage();
 
-function renderTodoItem(toDoListItem) {
+function renderTodoItem(todoText) {
   const listEl = $("#list");
   liEl = $("<li>");
   liEl.addClass(
@@ -28,7 +25,7 @@ function renderTodoItem(toDoListItem) {
   const divInput = $("<div>");
   divInput.addClass("d-flex align-items-center");
   const pTag = $("<p>");
-  pTag.append(toDoListItem);
+  pTag.append(todoText);
   divInput.append(pTag);
   createCheckbox(divInput);
   createRemoveItemEl(liEl);
@@ -43,7 +40,6 @@ let toDoList = JSON.parse(localStorage.getItem("toDoList"));
 for (let i = 0; i < toDoList.length; i++) {
   renderTodoItem(toDoList[i]);
 }
-
 initTodoList();
 
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
