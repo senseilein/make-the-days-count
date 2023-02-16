@@ -5,18 +5,42 @@ let finalResponse;
 //when page loads, weather div will be hidden / only displayed later when we get weather data
 const weatherDiv = $("#weather");
 weatherDiv.hide();
-let defaultTodos = ["Drink Water", "Smile", "Hug a tree", "Take a walk"];
+
+// let defaultTodos = ["Drink Water", "Smile", "Hug a tree", "Take a walk"];
 /*------------------------------LOCAL STORAGE-----------------------------*/
 function initLocalStorage() {
   let toDoList = JSON.parse(localStorage.getItem("toDoList"));
   if (!toDoList) {
     localStorage.setItem("toDoList", JSON.stringify([]));
-    let toDoList = JSON.parse(localStorage.getItem("toDoList"));
-    toDoList = [...defaultTodos];
-    localStorage.setItem("toDoList", JSON.stringify(toDoList));
   }
 }
 initLocalStorage();
+
+function renderTodoItem(todoText) {
+  const listEl = $("#list");
+  liEl = $("<li>");
+  liEl.addClass(
+    "list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2"
+  );
+  const divInput = $("<div>");
+  divInput.addClass("d-flex align-items-center");
+  const pTag = $("<p>");
+  pTag.append(todoText);
+  divInput.append(pTag);
+  createCheckbox(divInput);
+  createRemoveItemEl(liEl);
+  liEl.prepend(divInput);
+  listEl.append(liEl);
+}
+
+function initTodoList() {}
+let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+
+// for each piece of text, we render the relevant element on the page
+for (let i = 0; i < toDoList.length; i++) {
+  renderTodoItem(toDoList[i]);
+}
+initTodoList();
 
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
 
@@ -268,13 +292,27 @@ function createRemoveItemEl(liEl) {
   cross.on("click", removeToDoItem);
 }
 
+// function removeToDoItem(event) {
+//   let itemToBeRemoved = $(event.target).parent().parent();
+//   console.log(itemToBeRemoved.children().children().text());
+//   itemToBeRemoved.remove();
+
+//   let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+//   localStorage.setItem("toDoList", JSON.stringify(toDoList));
+// }
+
 function removeToDoItem(event) {
   let itemToBeRemoved = $(event.target).parent().parent();
   console.log(itemToBeRemoved.children().children().text());
-  itemToBeRemoved.remove();
-
+  const itemText = itemToBeRemoved.children().children().text();
+  console.log(itemText);
   let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+  console.log(toDoList);
+  const index = toDoList.indexOf(itemText);
+  toDoList.splice(index, 1);
+  console.log(index);
   localStorage.setItem("toDoList", JSON.stringify(toDoList));
+  itemToBeRemoved.remove();
 }
 
 function handleCheckboxChange(event) {
