@@ -56,8 +56,6 @@ function createWeatherQueryURL(userLocation) {
   weatherQueryURL += `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 }
 
-// console.log("NOOWWW " + weatherQueryURL);
-
 function getCurrentWeather() {
   console.log("please be defined " + weatherQueryURL);
 
@@ -147,33 +145,6 @@ function getWeatherIcon(response) {
       return icons[4];
     //break;
   }
-
-  // switch (description) {
-  //   case "clear sky":
-  //     return icons[0];
-  //     break;
-  //   case "few clouds":
-  //     return icons[2];
-  //     break;
-  //   case "scattered clouds" || "broken clouds":
-  //     return icons[6];
-  //     break;
-  //   case "shower rain" || "rain":
-  //     return icons[5];
-  //     break;
-  //   case "thunderstorm":
-  //     return icons[8];
-  //     break;
-  //   case "snow":
-  //     return icons[7];
-  //     break;
-  //   case "mist":
-  //     return icons[4];
-  //     break;
-  //   default:
-  //     return "heart";
-  //     break;
-  // }
 }
 
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
@@ -314,3 +285,6 @@ $(".form-check-input").on("change", handleCheckboxChange);
 const bigNeedMoreBtn = $("#bigNeedMore");
 const todosContainer = $("#todosContainer");
 todosContainer.on("click", bigNeedMoreBtn, showMainPage);
+
+const cupOfTea = $("#cupOfTea");
+weatherDiv.on("click", cupOfTea, pourTea);
