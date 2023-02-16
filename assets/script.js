@@ -5,20 +5,18 @@ let finalResponse;
 //when page loads, weather div will be hidden / only displayed later when we get weather data
 const weatherDiv = $("#weather");
 weatherDiv.hide();
-let defaultTodos = ['Drink Water','Smile', 'Hug a tree','Take a walk' ]
+let defaultTodos = ["Drink Water", "Smile", "Hug a tree", "Take a walk"];
 /*------------------------------LOCAL STORAGE-----------------------------*/
 function initLocalStorage() {
-	let toDoList = JSON.parse(localStorage.getItem('toDoList'))
-  if (!toDoList)
-  {
-
-    localStorage.setItem('toDoList',JSON.stringify([]))
-    let toDoList = JSON.parse(localStorage.getItem('toDoList'))
-    toDoList = [...defaultTodos]
-    localStorage.setItem('toDoList',JSON.stringify(toDoList))
+  let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+  if (!toDoList) {
+    localStorage.setItem("toDoList", JSON.stringify([]));
+    let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+    toDoList = [...defaultTodos];
+    localStorage.setItem("toDoList", JSON.stringify(toDoList));
   }
 }
-initLocalStorage()
+initLocalStorage();
 
 /*------------------------------FUNCTIONS FOR WEATHER SECTION------------------------------*/
 
@@ -237,7 +235,7 @@ needMoreBtn.on("click", needMoreGiphy);
 let addbutton = $("#add-button");
 addbutton.on("click", function addLi(event) {
   let newTodoEl = $("#todo-input").val().trim();
-  updateLocalStorageWithNewTodos(newTodoEl)
+  updateLocalStorageWithNewTodos(newTodoEl);
   console.log(newTodoEl);
   listEl = $("#list");
   liEl = $("<li>");
@@ -257,15 +255,13 @@ addbutton.on("click", function addLi(event) {
   listEl.append(liEl);
 });
 
-function updateLocalStorageWithNewTodos(newTodoEl){
- let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
-  if (!toDoList.includes(newTodoEl)){
-toDoList.push(newTodoEl)
+function updateLocalStorageWithNewTodos(newTodoEl) {
+  let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+  if (!toDoList.includes(newTodoEl)) {
+    toDoList.push(newTodoEl);
   }
-  localStorage.setItem("toDoList",JSON.stringify(toDoList))
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
 }
-
-
 
 function createCheckbox(divInput) {
   const checkBox = $("<input>").attr({ type: "checkbox" });
@@ -286,17 +282,12 @@ function createRemoveItemEl(liEl) {
 }
 
 function removeToDoItem(event) {
-  let itemToBeRemoved =  $(event.target).parent().parent()
-  console.log(itemToBeRemoved.children().children().text())
-  const itemText = itemToBeRemoved.children().children().text()
-  console.log(itemText)
-  let toDoList =JSON.parse(localStorage.getItem('toDoList')) 
-  console.log(toDoList)
-  const index = toDoList.indexOf(itemText)
-  toDoList.splice(index,1)
-  console.log(index)
-localStorage.setItem("toDoList",JSON.stringify(toDoList))
-itemToBeRemoved.remove();
+  let itemToBeRemoved = $(event.target).parent().parent();
+  console.log(itemToBeRemoved.children().children().text());
+  itemToBeRemoved.remove();
+
+  let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
 }
 
 function handleCheckboxChange(event) {
