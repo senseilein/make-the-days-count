@@ -147,6 +147,22 @@ function getWeatherIcon(response) {
   }
 }
 
+// Function for the cup of love tea
+function pourLoveTea(e) {
+  console.log(e);
+  const cupOfTea = $("#cupOfTea");
+  // const cupOfTeaButton = $("cupOfTeaButton");
+  cupOfTea.hide();
+  const hearts = $('<img src="./assets/images/red_heart_by_Rokey.png"/>');
+  // hearts.attr("scr", String.raw`.\assets\images\hearts_by_icon-icons.png`);
+  hearts.attr("id", "hearts");
+  weatherDiv.append(hearts);
+  setTimeout(function () {
+    cupOfTea.show();
+    hearts.remove();
+  }, 1000);
+}
+
 /*------------------------------FUNCTIONS FOR GIPHY SECTION------------------------------*/
 
 /*-----API CALL-----*/
@@ -287,4 +303,4 @@ const todosContainer = $("#todosContainer");
 todosContainer.on("click", bigNeedMoreBtn, showMainPage);
 
 const cupOfTea = $("#cupOfTea");
-weatherDiv.on("click", cupOfTea, pourTea);
+weatherDiv.on("click", cupOfTea, pourLoveTea);
