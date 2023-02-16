@@ -99,6 +99,9 @@ header {
 }
 /*------------------------------GIPHY CONTAINER------------------------------*/
 
+#giphyContainer {
+	min-height: 80vh ;
+}
 
 #giphy {
 	width: 100%;
