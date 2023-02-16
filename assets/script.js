@@ -5,6 +5,7 @@ let finalResponse;
 //when page loads, weather div will be hidden / only displayed later when we get weather data
 const weatherDiv = $("#weather");
 weatherDiv.hide();
+
 // let defaultTodos = ["Drink Water", "Smile", "Hug a tree", "Take a walk"];
 /*------------------------------LOCAL STORAGE-----------------------------*/
 function initLocalStorage() {
@@ -12,13 +13,13 @@ function initLocalStorage() {
   if (!toDoList) {
     localStorage.setItem("toDoList", JSON.stringify([]));
     // let toDoList = JSON.parse(localStorage.getItem("toDoList"));
-    // toDoList = [...defaultTodos];
+    // /toDoList = [...defaultTodos];
     // localStorage.setItem("toDoList", JSON.stringify(toDoList));
   }
 }
 initLocalStorage();
 
-function renderTodoItem(todoText) {
+function renderTodoItem(toDoListItem) {
   const listEl = $("#list");
   liEl = $("<li>");
   liEl.addClass(
@@ -27,12 +28,20 @@ function renderTodoItem(todoText) {
   const divInput = $("<div>");
   divInput.addClass("d-flex align-items-center");
   const pTag = $("<p>");
-  pTag.append(todoText);
+  pTag.append(toDoListItem);
   divInput.append(pTag);
   createCheckbox(divInput);
   createRemoveItemEl(liEl);
   liEl.prepend(divInput);
   listEl.append(liEl);
+}
+
+function initTodoList() {}
+let toDoList = JSON.parse(localStorage.getItem("toDoList"));
+
+// for each piece of text, we render the relevant element on the page
+for (let i = 0; i < toDoList.length; i++) {
+  renderTodoItem(toDoList[i]);
 }
 
 initTodoList();
